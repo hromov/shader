@@ -1,8 +1,8 @@
+import { Html, OrbitControls, PerspectiveCamera, shaderMaterial, Stats, useTexture } from '@react-three/drei'
+import { Canvas, extend, useFrame, useThree } from '@react-three/fiber'
+import { Leva, useControls } from 'leva'
 import { useLayoutEffect, useRef } from 'react'
-import { Canvas, useFrame, extend, useThree } from '@react-three/fiber'
-import { shaderMaterial, useTexture, OrbitControls, PerspectiveCamera, Stats, Html } from '@react-three/drei'
-import { Vector2, Vector3, MathUtils, LinearFilter, Color } from 'three'
-import { useControls, Leva } from 'leva'
+import { Color, LinearFilter, MathUtils, Vector2, Vector3 } from 'three'
 
 const PolarTextureMaterial = shaderMaterial(
   {
@@ -153,20 +153,20 @@ function Plane(props) {
   })
 
   const vertexProps = useControls('displacement', {
-    amplitude: { value: 0.02, min: 0, max: 0.5, step: 0.01 },
-    frequency: { value: 7, min: 1, max: 10 },
-    speed: { value: 10, min: 1, max: 20 }
+    amplitude: { value: 0.5, min: 0, max: 0.5, step: 0.01 },
+    frequency: { value: 5.83, min: 1, max: 10 },
+    speed: { value: 3.6, min: 1, max: 20 }
   })
 
   const fragmentProps = useControls('effect', {
-    zoom: { value: 0.05, min: 0.01, max: 5 },
-    twist: { value: -1, min: -1, max: 1 },
-    rotateSpeed: { value: -0.1, min: -1, max: 1, step: 0.01 },
-    scaleSpeed: { value: -0.1, min: -1, max: 1 },
-    vignette: { value: 2, min: 0, max: 5 },
-    tint: '#457782',
-    tintIntensity: { value: 10, min: 0, max: 20 },
-    bgIntensity: { value: 1, min: 0, max: 20 }
+    zoom: { value: 3, min: 0.01, max: 5 },
+    twist: { value: 0.2, min: -1, max: 1 },
+    rotateSpeed: { value: -0.3, min: -1, max: 1, step: 0.01 },
+    scaleSpeed: { value: 0.38, min: -1, max: 1 },
+    vignette: { value: 1.55, min: 0, max: 5 },
+    tint: '#1b15c4',
+    tintIntensity: { value: 13.8, min: 0, max: 20 },
+    bgIntensity: { value: 1.2, min: 0, max: 20 }
   })
 
   const { showTexture, trackPointer, ...matProps } = useControls({
