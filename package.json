@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "keywords": [],
+  "homepage": "https://hromov.github.io/shader/",
   "main": "src/index.js",
   "dependencies": {
     "@react-three/drei": "9.18.0",
